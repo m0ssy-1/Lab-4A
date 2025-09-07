@@ -1,3 +1,4 @@
+#include <filesystem>
 #include <iostream>
 #include <iomanip>
 #include <vector>
@@ -7,7 +8,7 @@
 using namespace std;
 
 // struct to store color values
-struct color {
+struct Color {
     int red;
     int green;
     int blue;
@@ -25,8 +26,21 @@ int main() {
 
 }
 
+// outpus title
 cout << left << setw(8) << "color#"
     << set(10) << "Red Value"
     << set(10) << "Green Value"
     << set(10) << "Blue Value" << endl;
 cout << string(#, '-') << endl;
+
+
+// output content
+for (size_t i = 0; i < colors.size(); i++) {
+    cout << left << setw(8) << (i+1)
+    << setw(10) << colors[i].red
+    << setw(10) << colors[i].green
+    << setw(10) << colors[i].blue
+}
+
+return 0;
+}
